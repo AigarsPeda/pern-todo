@@ -35,14 +35,14 @@ const ListTodos: React.FC = () => {
 
   return (
     <div className="list-todos">
-      {listTodos.map((todo) => {
-        return (
-          <div key={todo.todo_id} className="todo">
-            <ul>
+      <ul>
+        {listTodos.map((todo) => {
+          return (
+            <div key={todo.todo_id}>
               <li>
                 <p>{todo.description}</p>
                 <div className="todo-buttons">
-                  <EditTodo />
+                  <EditTodo todo={todo} />
                   <button
                     className="delete"
                     onClick={() => handleDelete(todo.todo_id)}
@@ -51,10 +51,10 @@ const ListTodos: React.FC = () => {
                   </button>
                 </div>
               </li>
-            </ul>
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 };

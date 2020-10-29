@@ -41,11 +41,11 @@ const EditTodo: React.FC<Props> = (props) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const body = { description };
     try {
-      fetch(`${BASE_URL}/todos/${todo.todo_id}`, {
+      await fetch(`${BASE_URL}/todos/${todo.todo_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)

@@ -10,7 +10,7 @@
     background-color: #007bff;
     border-color: #007bff;
   }
-  .edit-modal {
+  .edit-modal-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -22,11 +22,71 @@
     background: rgba(63, 94, 251, 0.8);
     text-align: -webkit-center;
 
-    .edit-form {
+    .edit-modal {
       padding: 1.6rem 1.8rem 4rem 1.8rem;
       max-width: 35rem;
       margin: 4.3rem 0.3rem;
-      background-color: bisque;
+      background-color: whitesmoke;
+
+      &.toggleIn {
+        animation: slideDown 500ms;
+      }
+      &.toggleOut {
+        animation: slideUp 500ms;
+      }
+
+      .close-button-container {
+        text-align: right;
+
+        .close-button {
+          background: none;
+          border: none;
+          font-size: 1rem;
+          color: #dc3545;
+        }
+      }
+
+      form {
+        input {
+          border: none;
+          border-bottom: 0.1rem solid #343a40;
+          background: transparent;
+          width: 90%;
+          height: 1.5rem;
+          display: block;
+          margin: auto;
+          font-size: 1.2rem;
+        }
+
+        button {
+          width: 6rem;
+          height: 2.5rem;
+          margin-top: 0.5rem;
+          border-radius: 0.25rem;
+          color: #fff;
+          background-color: #28a745;
+          border-color: #28a745;
+        }
+      }
     }
+  }
+}
+
+// ANIMATIONS
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-400%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }

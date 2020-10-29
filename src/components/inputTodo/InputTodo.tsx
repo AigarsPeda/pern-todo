@@ -14,8 +14,7 @@ const InputTodo: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
-      // console.log(response);
-      // window.location = "/";
+
       setDescription("");
 
       // this is needed for page to refresh
@@ -36,7 +35,7 @@ const InputTodo: React.FC = () => {
           onChange={(e) => setDescription(e.target.value)}
         />
         <button type="submit" disabled={!description.trim()}>
-          Add
+          Add New Todo
         </button>
       </form>
     </div>

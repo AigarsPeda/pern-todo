@@ -26,6 +26,7 @@ const EditTodo: React.FC<Props> = (props) => {
 
     setTimeout(() => {
       setIsOpen(false);
+      setDescription("");
     }, 500);
   };
 
@@ -37,6 +38,7 @@ const EditTodo: React.FC<Props> = (props) => {
 
       setTimeout(() => {
         setIsOpen(false);
+        setDescription("");
       }, 500);
     }
   };
@@ -54,6 +56,7 @@ const EditTodo: React.FC<Props> = (props) => {
       setToggle(false);
       setTimeout(() => {
         setIsOpen(false);
+        setDescription("");
         window.location.href = "/";
       }, 500);
     } catch (error) {
